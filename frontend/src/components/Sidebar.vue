@@ -1,3 +1,6 @@
+// Modified by Lucky Jain (alias: LostB053) on 19/05/2025 (DD/MM/YYYY)
+// Deletion at line 65 of this file
+
 <template>
   <div v-show="active" @click="closeHovers" class="overlay"></div>
   <nav :class="{ active }">
