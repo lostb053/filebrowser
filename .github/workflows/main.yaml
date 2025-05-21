@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - "master"
+      - "login-rm"
+      - "public-url"
     tags:
       - "v*"
   pull_request:
