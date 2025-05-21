@@ -56,8 +56,8 @@ dockers:
     goos: linux
     goarch: amd64
     image_templates:
-      - "filebrowser/filebrowser:{{ .Tag }}-amd64"
-      - "filebrowser/filebrowser:v{{ .Major }}-amd64"
+      - "lostb053/filebrowser:{{ .Tag }}-amd64"
+      - "lostb053/filebrowser:v{{ .Major }}-amd64"
     extra_files:
       - docker_config.json
       - healthcheck.sh
@@ -75,8 +75,8 @@ dockers:
     goos: linux
     goarch: arm64
     image_templates:
-      - "filebrowser/filebrowser:{{ .Tag }}-arm64"
-      - "filebrowser/filebrowser:v{{ .Major }}-arm64"
+      - "lostb053/filebrowser:{{ .Tag }}-arm64"
+      - "lostb053/filebrowser:v{{ .Major }}-arm64"
     extra_files:
       - docker_config.json
       - healthcheck.sh
@@ -95,8 +95,8 @@ dockers:
     goarch: arm
     goarm: '6'
     image_templates:
-      - "filebrowser/filebrowser:{{ .Tag }}-armv6"
-      - "filebrowser/filebrowser:v{{ .Major }}-armv6"
+      - "lostb053/filebrowser:{{ .Tag }}-armv6"
+      - "lostb053/filebrowser:v{{ .Major }}-armv6"
     extra_files:
       - docker_config.json
       - healthcheck.sh
@@ -115,8 +115,8 @@ dockers:
     goarch: arm
     goarm: '7'
     image_templates:
-      - "filebrowser/filebrowser:{{ .Tag }}-armv7"
-      - "filebrowser/filebrowser:v{{ .Major }}-armv7"
+      - "lostb053/filebrowser:{{ .Tag }}-armv7"
+      - "lostb053/filebrowser:v{{ .Major }}-armv7"
     extra_files:
       - docker_config.json
       - healthcheck.sh
@@ -135,8 +135,8 @@ dockers:
     goos: linux
     goarch: amd64
     image_templates:
-      - "filebrowser/filebrowser:{{ .Tag }}-amd64-s6"
-      - "filebrowser/filebrowser:v{{ .Major }}-amd64-s6"
+      - "lostb053/filebrowser:{{ .Tag }}-amd64-s6"
+      - "lostb053/filebrowser:v{{ .Major }}-amd64-s6"
     extra_files:
       - docker/root
       - healthcheck.sh
@@ -154,49 +154,37 @@ dockers:
     goos: linux
     goarch: arm64
     image_templates:
-      - "filebrowser/filebrowser:{{ .Tag }}-arm64-s6"
-      - "filebrowser/filebrowser:v{{ .Major }}-arm64-s6"
+      - "lostb053/filebrowser:{{ .Tag }}-arm64-s6"
+      - "lostb053/filebrowser:v{{ .Major }}-arm64-s6"
     extra_files:
       - docker/root
       - healthcheck.sh
 docker_manifests:
-  - name_template: "filebrowser/filebrowser:latest"
+  - name_template: "lostb053/filebrowser:latest"
     image_templates:
-      - "filebrowser/filebrowser:{{ .Tag }}-amd64"
-      - "filebrowser/filebrowser:{{ .Tag }}-arm64"
-      - "filebrowser/filebrowser:{{ .Tag }}-armv7"
-  - name_template: "filebrowser/filebrowser:{{ .Tag }}"
+      - "lostb053/filebrowser:{{ .Tag }}-amd64"
+      - "lostb053/filebrowser:{{ .Tag }}-arm64"
+      - "lostb053/filebrowser:{{ .Tag }}-armv7"
+  - name_template: "lostb053/filebrowser:{{ .Tag }}"
     image_templates:
-      - "filebrowser/filebrowser:{{ .Tag }}-amd64"
-      - "filebrowser/filebrowser:{{ .Tag }}-arm64"
-      - "filebrowser/filebrowser:{{ .Tag }}-armv7"
-  - name_template: "filebrowser/filebrowser:v{{ .Major }}"
+      - "lostb053/filebrowser:{{ .Tag }}-amd64"
+      - "lostb053/filebrowser:{{ .Tag }}-arm64"
+      - "lostb053/filebrowser:{{ .Tag }}-armv7"
+  - name_template: "lostb053/filebrowser:v{{ .Major }}"
     image_templates:
-      - "filebrowser/filebrowser:v{{ .Major }}-amd64"
-      - "filebrowser/filebrowser:v{{ .Major }}-arm64"
-      - "filebrowser/filebrowser:v{{ .Major }}-armv7"
+      - "lostb053/filebrowser:v{{ .Major }}-amd64"
+      - "lostb053/filebrowser:v{{ .Major }}-arm64"
+      - "lostb053/filebrowser:v{{ .Major }}-armv7"
 ## s6 image manifests
-  - name_template: "filebrowser/filebrowser:s6"
+  - name_template: "lostb053/filebrowser:s6"
     image_templates:
-      - "filebrowser/filebrowser:{{ .Tag }}-amd64-s6"
-      - "filebrowser/filebrowser:{{ .Tag }}-arm64-s6"
-  - name_template: "filebrowser/filebrowser:{{ .Tag }}-s6"
+      - "lostb053/filebrowser:{{ .Tag }}-amd64-s6"
+      - "lostb053/filebrowser:{{ .Tag }}-arm64-s6"
+  - name_template: "lostb053/filebrowser:{{ .Tag }}-s6"
     image_templates:
-      - "filebrowser/filebrowser:{{ .Tag }}-amd64-s6"
-      - "filebrowser/filebrowser:{{ .Tag }}-arm64-s6"
-  - name_template: "filebrowser/filebrowser:v{{ .Major }}-s6"
+      - "lostb053/filebrowser:{{ .Tag }}-amd64-s6"
+      - "lostb053/filebrowser:{{ .Tag }}-arm64-s6"
+  - name_template: "lostb053/filebrowser:v{{ .Major }}-s6"
     image_templates:
-      - "filebrowser/filebrowser:v{{ .Major }}-amd64-s6"
-      - "filebrowser/filebrowser:v{{ .Major }}-arm64-s6"
-brews:
-  - name: filebrowser
-    repository:
-      owner: filebrowser
-      name: homebrew-tap
-    directory: Formula
-    homepage: https://filebrowser.org
-    commit_author:
-      name: FileBrowser Robot
-      email: robot@filebrowser.org
-    description: File Browser is a create-your-own-cloud-kind of software where you can install it on a server, direct it to a path and then access your files through a nice web interface
-    license: "MIT"
+      - "lostb053/filebrowser:v{{ .Major }}-amd64-s6"
+      - "lostb053/filebrowser:v{{ .Major }}-arm64-s6"
