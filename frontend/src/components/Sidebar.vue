@@ -60,16 +60,6 @@
     </template>
     <template v-else>
       <router-link
-        class="action"
-        to="/login"
-        :aria-label="$t('sidebar.login')"
-        :title="$t('sidebar.login')"
-      >
-        <i class="material-icons">exit_to_app</i>
-        <span>{{ $t("sidebar.login") }}</span>
-      </router-link>
-
-      <router-link
         v-if="signup"
         class="action"
         to="/login"
