@@ -13,6 +13,7 @@ const version: string = window.FileBrowser.Version;
 const logoURL = `${staticURL}/img/logo.svg`;
 const noAuth: boolean = window.FileBrowser.NoAuth;
 const authMethod = window.FileBrowser.AuthMethod;
+const logoutPage: string = window.FileBrowser.LogoutPage;
 const loginPage: boolean = window.FileBrowser.LoginPage;
 const theme: UserTheme = window.FileBrowser.Theme;
 const enableThumbs: boolean = window.FileBrowser.EnableThumbs;
@@ -21,8 +22,7 @@ const enableExec: boolean = window.FileBrowser.EnableExec;
 const tusSettings = window.FileBrowser.TusSettings;
 const origin = window.location.origin;
 const tusEndpoint = `/api/tus`;
-const publiclogin = window.FileBrowser.PublicLogin;
-const publicURL = window.FileBrowser.PublicURL;
+const hideLoginButton = window.FileBrowser.HideLoginButton;
 
 export {
   name,
@@ -36,6 +36,7 @@ export {
   version,
   noAuth,
   authMethod,
+  logoutPage,
   loginPage,
   theme,
   enableThumbs,
@@ -44,6 +45,5 @@ export {
   tusSettings,
   origin,
   tusEndpoint,
-  publiclogin,
-  publicURL,
+  hideLoginButton,
 };
