@@ -2,9 +2,6 @@
 * Longer share tokens 8 vs 20
 * Wider cards to support longer tokens
 * Reload login page on wrong creds. Why? Even if your CF, Proxy, Auth all block access to login, login page can be accessed (internally presented). A forced reload will send a new request, effectively allowing above mentioned options to catch the link and effectively apply the set rules.
-* New option:
-  - `--publiclogin`: Removes any and all login buttons from the sidebar if set to `false`. Why? To prevent login attempts from a share page.
-  - `--publicurl`: Creates shareable url with host/path as base. Explained further in detail below.
 
 
 ## Security Implementation:

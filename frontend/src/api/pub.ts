@@ -2,7 +2,7 @@
 // Modification at line 5, 71-75, 80, 81-83, 84 of this file
 
 import { fetchURL, removePrefix, createURL } from "./utils";
-import { baseURL, publicURL } from "@/utils/constants";
+import { baseURL } from "@/utils/constants";
 
 export async function fetch(url: string, password: string = "") {
   url = removePrefix(url);
@@ -77,7 +77,7 @@ export function getDownloadURL(
     ...(inline && { inline: "true" }),
     ...(res.token && { token: res.token }),
   };
-  const prefix = publicURL ? "" : "api/public/dl/";
+  const prefix = "api/public/dl/";
   const filename = singleShare
     ? "/" + res.path.match(/\/([^\/]+)$/)?.[1]
     : res.path;

@@ -3,7 +3,7 @@
 
 import { useAuthStore } from "@/stores/auth";
 import { renew, logout } from "@/utils/auth";
-import { baseURL, publicURL } from "@/utils/constants";
+import { baseURL } from "@/utils/constants";
 import { encodePath } from "@/utils/url";
 
 export class StatusError extends Error {
@@ -90,11 +90,11 @@ export function createURL(
   isDL = false,
   isShare = false
 ): string {
-  let prefix = isDL && publicURL ? "" : baseURL;
+  let prefix = baseURL;
   if (!prefix.endsWith("/")) {
     prefix = prefix + "/";
   }
-  const mainURL = isShare && publicURL ? publicURL : origin;
+  const mainURL = origin;
   const url = new URL(prefix + encodePath(endpoint), mainURL);
   url.search = new URLSearchParams(searchParams).toString();
 
