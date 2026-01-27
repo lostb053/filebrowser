@@ -87,8 +87,6 @@ export function removePrefix(url: string): string {
 export function createURL(
   endpoint: string,
   searchParams = {},
-  isDL = false,
-  isShare = false
 ): string {
   let prefix = baseURL;
   if (!prefix.endsWith("/")) {
