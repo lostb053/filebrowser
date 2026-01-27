@@ -43,7 +43,11 @@
     "upload": "Ladda upp",
     "openFile": "Öppna fil",
     "discardChanges": "Förkasta",
-    "saveChanges": "Spara ändringar"
+    "stopSearch": "Stop searching",
+    "saveChanges": "Spara ändringar",
+    "editAsText": "Edit as Text",
+    "increaseFontSize": "Increase font size",
+    "decreaseFontSize": "Decrease font size"
   },
   "download": {
     "downloadFile": "Ladda ner fil",
@@ -75,7 +79,16 @@
     "sortByLastModified": "Sortera på senast ändrad",
     "sortByName": "Sortera på namn",
     "sortBySize": "Sortera på storlek",
-    "noPreview": "Förhandsvisning är inte tillgänglig för denna fil."
+    "noPreview": "Förhandsvisning är inte tillgänglig för denna fil.",
+    "csvTooLarge": "CSV file is too large for preview (>5MB). Please download to view.",
+    "csvLoadFailed": "Failed to load CSV file.",
+    "showingRows": "Showing {count} row(s)",
+    "columnSeparator": "Column Separator",
+    "csvSeparators": {
+      "comma": "Comma (,)",
+      "semicolon": "Semicolon (;)",
+      "both": "Both (,) and (;)"
+    }
   },
   "help": {
     "click": "välj fil eller mapp",
@@ -102,6 +115,7 @@
     "username": "Användarnamn",
     "usernameTaken": "Användarnamn upptaget",
     "wrongCredentials": "Fel inloggning",
+    "passwordTooShort": "Password must be at least {min} characters",
     "logout_reasons": {
       "inactivity": "Du har blivit utloggad på grund av inaktivitet."
     }
@@ -166,6 +180,7 @@
     "allowNew": "Skapa nya filer eller mappar",
     "allowPublish": "Publicera nya inlägg och sidor",
     "allowSignup": "Tillåt användare att registrera sig",
+    "hideLoginButton": "Hide the login button from public pages",
     "avoidChanges": "(lämna blankt för att undvika ändringar)",
     "branding": "Varumärke",
     "brandingDirectoryPath": "Sökväg till varumärkes katalog",
@@ -217,6 +232,7 @@
     "permissions": "Rättigheter",
     "permissionsHelp": "Du kan ange att användaren ska vara administratör eller välja behörigheterna individuellt. Om du väljer \"administratör \" kommer alla andra alternativ att kontrolleras automatiskt. Hanteringen av användare är fortfarande ett privilegium för en administratör.\n",
     "profileSettings": "Profil inställningar",
+    "redirectAfterCopyMove": "Redirect to destination after copy/move",
     "ruleExample1": "förhindrar åtkomst till en dot-fil (till exempel. git,. gitignore) i varje mapp.\n",
     "ruleExample2": "blockerar åtkomsten till filen som heter Caddyfilen i roten av scopet.",
     "rules": "Regler",
@@ -243,7 +259,8 @@
     "userManagement": "Användarehantering",
     "userUpdated": "Användare uppdaterad!",
     "username": "Användarnamn",
-    "users": "Användare"
+    "users": "Användare",
+    "currentPassword": "Your Current Password"
   },
   "sidebar": {
     "help": "Hjälp",
