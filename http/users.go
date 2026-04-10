@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"sort"
 	"strconv"
+	"strings"
 
 	"github.com/gorilla/mux"
 	"golang.org/x/text/cases"
@@ -155,6 +156,10 @@ var userPostHandler = withAdmin(func(w http.ResponseWriter, r *http.Request, d *
 		return http.StatusBadRequest, err
 	}
 
+	if req.Data.Perm.Share && !req.Data.Perm.Download {
+		return http.StatusBadRequest, fberrors.ErrShareRequiresDownload
+	}
+
 	userHome, err := d.settings.MakeUserDir(req.Data.Username, req.Data.Scope, d.server.Root)
 	if err != nil {
 		log.Printf("create user: failed to mkdir user home dir: [%s]", userHome)
@@ -190,7 +195,7 @@ var userPutHandler = withSelfOrAdmin(func(w http.ResponseWriter, r *http.Request
 		}
 
 		for _, field := range req.Which {
-			if _, ok := sensibleFields[field]; ok {
+			if _, ok := sensibleFields[strings.ToLower(field)]; ok {
 				if !users.CheckPwd(req.CurrentPassword, d.user.Password) {
 					return http.StatusBadRequest, fberrors.ErrCurrentPasswordIncorrect
 				}
@@ -201,6 +206,14 @@ var userPutHandler = withSelfOrAdmin(func(w http.ResponseWriter, r *http.Request
 
 	if req.Data.ID != d.raw.(uint) {
 		return http.StatusBadRequest, nil
+	}
+
+	for _, field := range req.Which {
+		if strings.ToLower(field) == "perm" || strings.ToLower(field) == "all" {
+			if req.Data.Perm.Share && !req.Data.Perm.Download {
+				return http.StatusBadRequest, fberrors.ErrShareRequiresDownload
+			}
+		}
 	}
 
 	if len(req.Which) == 0 || (len(req.Which) == 1 && req.Which[0] == "all") {
